@@ -54,6 +54,15 @@ html {
 body {
   font-size: 1.6rem;
 }
+body ::-webkit-scrollbar {
+  width: 5px;
+}
+body ::-webkit-scrollbar-track {
+  background-color: #b4b6b6;
+}
+body ::-webkit-scrollbar-thumb {
+  background-color: #95e1d3;
+}
 
 .clearfix::after {
   content: "";
@@ -65,7 +74,6 @@ body {
   width: 96%;
   max-width: 1200px;
   margin: 0 auto;
-  border: solid black;
 }
 
 .container {
@@ -116,7 +124,6 @@ header {
 }
 header .container nav {
   display: inline-block;
-  border: solid red;
   font-family: Montserrat;
   width: 100%;
 }
@@ -134,7 +141,7 @@ header .container nav .wrapper ul {
   list-style: none;
   float: right;
   text-transform: uppercase;
-  color: #fce38a;
+  color: #fff;
   font-weight: 400;
   font-family: "Montserrat";
   text-align: center;
@@ -147,10 +154,14 @@ header .container nav .wrapper ul li {
 }
 
 #landing {
+  display: none;
   max-width: 1920px;
   min-height: 100vh;
   border: solid red;
-  background-image: linear-gradient(0deg, #fbe389 0%, #f48b82 100%);
+  background-image: url(/images/main-banner.jpg);
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 #landing .wrapper {
   position: relative;
@@ -186,18 +197,29 @@ header .container nav .wrapper ul li {
 }
 #landing .wrapper button {
   position: absolute;
-  top: 73%;
-  left: 50%;
+  top: 80%;
+  left: 43%;
   ransform: translate(-50%, -50%);
+  width: 16rem;
+  height: 4rem;
+  background-color: rgba(0, 0, 0, 0);
+  border: 3px solid #ffffff;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-weight: bold;
+  font-family: "Montserrat";
+  text-align: center;
 }
 #landing .wrapper ol {
   position: absolute;
   bottom: 0;
   width: 100%;
-  list-style-type: decimal;
   height: 7rem;
   font-size: 0;
   padding: 2.5rem 1rem 2.5rem 0;
+  list-style: none;
+  counter-increment: counter;
 }
 #landing .wrapper ol li {
   width: 25%;
@@ -224,14 +246,15 @@ header .container nav .wrapper ul li {
 #what .wrapper .aboutphotos {
   font-size: 0;
   padding-top: 10rem;
+  padding-bottom: 10rem;
   display: block;
-  margin: auto;
   width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 #what .wrapper .aboutphotos .aboutimg {
-  width: 32%;
+  width: 33.33%;
   display: inline-block;
-  margin: auto;
 }
 #what .wrapper .aboutphotos .aboutimg img {
   max-width: 100%;
@@ -239,6 +262,8 @@ header .container nav .wrapper ul li {
 
 #ratings {
   width: 100%;
+  height: 27rem;
+  background-color: #95e1d3;
 }
 #ratings .wrapper {
   font-size: 0;
@@ -249,49 +274,55 @@ header .container nav .wrapper ul li {
   width: 20%;
   font-size: 7.2rem;
   text-align: center;
-  padding: 9rem 0;
+  font-weight: bold;
+  padding: 9rem 0 6rem;
+  color: #ffffff;
+  font-family: "Montserrat";
 }
 #ratings span {
   font-size: 1.4rem;
   display: block;
   padding-top: 3rem;
+  font-family: "Montserrat";
 }
 
 #services .wrapper {
   padding-top: 10rem;
 }
 #services .wrapper .section {
+  width: 100%;
   margin: 6.5rem;
   margin-inline: auto;
 }
-#services .wrapper .section .row {
-  font-size: 0;
+#services .wrapper .section .item {
+  width: 32%;
+  display: inline-block;
+  padding: 1rem 3rem 1rem;
+}
+#services .wrapper .section .item .photo {
+  max-width: 20%;
+  display: inline-block;
+  float: left;
+}
+#services .wrapper .section .item .photo img {
   display: inline-block;
 }
-#services .wrapper .section .row .item {
-  margin-left: 1%;
-  width: 30%;
+#services .wrapper .section .item .itemtext {
   display: inline-block;
-  padding-left: 1;
+  width: 80%;
+  padding-left: 2.8rem;
 }
-#services .wrapper .section .row .item .photo img {
-  max-width: 100%;
-  display: inline-block;
-}
-#services .wrapper .section .row .item .itemtext {
-  display: inline-block;
-  width: 70%;
-}
-#services .wrapper .section .row .item .itemtext h5 {
+#services .wrapper .section .item .itemtext h5 {
   font-size: 1.4rem;
   text-transform: uppercase;
   color: #333333;
   font-weight: 400;
   font-family: "Montserrat";
   display: inline-block;
+  text-transform: uppercase;
 }
-#services .wrapper .section .row .item .itemtext p {
-  width: 29rem;
+#services .wrapper .section .item .itemtext p {
+  max-width: 29rem;
   height: 8.1rem;
   font-size: 1.5rem;
   line-height: 2.4rem;
@@ -299,10 +330,16 @@ header .container nav .wrapper ul li {
   font-weight: 400;
   font-family: "Roboto";
   display: inline-block;
+  padding-top: 2rem;
+  width: 100%;
 }
 
 #unique {
   position: relative;
+  background-image: url(/images/foralldevices-bg.jpg);
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 #unique .wrapper {
   padding-top: 10rem;
@@ -318,10 +355,92 @@ header .container nav .wrapper ul li {
 }
 #unique .wrapper .iphone {
   position: absolute;
-  left: 60%;
+  left: 55%;
   top: 60%;
+  max-width: 100%;
+  height: auto;
 }
 
 #service .wrapper {
   padding-top: 10rem;
+}
+#service .wrapper .services {
+  font-size: 0;
+  width: 100%;
+  padding-top: 8.5rem;
+}
+#service .wrapper .services .wallphot {
+  max-width: 59.5rem;
+  display: inline-block;
+}
+#service .wrapper .services .wallphot .whatwedo {
+  max-width: 100%;
+  height: auto;
+}
+#service .wrapper .ako {
+  max-width: 60rem;
+  display: inline-block;
+  font-size: 0;
+  padding-bottom: 12rem;
+}
+#service .wrapper .ako .accordion {
+  background-color: #eee;
+  width: 100%;
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid #e5e5e5;
+  outline: none;
+  height: 60px;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #333333;
+  font-weight: 400;
+  font-family: "Montserrat";
+}
+#service .wrapper .ako .accordion p {
+  padding: 25px 0;
+  display: inline-block;
+}
+#service .wrapper .ako .accordion img {
+  float: left;
+  padding: 15px;
+}
+#service .wrapper .ako .accordion .up {
+  float: right;
+  padding: 24px 2px;
+}
+#service .wrapper .ako .accordion .down {
+  transform: rotate(180deg);
+  float: right;
+  padding: 24px 2px;
+}
+#service .wrapper .ako .panel {
+  background-color: white;
+  padding: 2rem 2rem 0;
+  overflow: scroll;
+  height: 182px;
+  overflow-x: hidden;
+}
+#service .wrapper .ako .panel p {
+  height: 135px;
+  font-size: 15px;
+  line-height: 24px;
+  color: #999999;
+  font-weight: 300;
+  font-style: italic;
+  font-family: "Roboto";
+  width: 100%;
+  display: inline-block;
+}
+
+#qoute {
+  background-color: #f8f8f8;
+  width: 100%;
+  height: 290px;
+}
+#qoute .wrapper {
+  display: inline;
+}
+#qoute .wrapper .left {
+  vertical-align: sub;
 }/*# sourceMappingURL=style.css.map */
