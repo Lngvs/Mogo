@@ -37,6 +37,8 @@ input
     border-radius: 0
 //mano
 
+
+
 html
     font-size: 62.5%
 body
@@ -102,6 +104,12 @@ body
         margin-inline: auto
         padding: 4.5rem 1.5rem 0
 
+.lil
+    width: 60px
+    height: 3px
+    background-color: #f38181
+
+
 
 
 header
@@ -137,14 +145,13 @@ header
                                 font-size: 1.4rem
 
 #landing
-    display: none
     max-width: 1920px
     min-height: 100vh
     border: solid red
     background-image: url(/images/main-banner.jpg)
-    background-size: 100% 100%
-    background-attachment: fixed
-    background-repeat: no-repeat
+    height: fit-content
+    background-size: cover
+    background-position: center
     .wrapper
         position: relative
         min-height: 100vh
@@ -183,7 +190,7 @@ header
             height: 4rem
             background-color: rgba(0,0,0,0)
             border: 3px solid #ffffff
-            font-size: 14px
+            font-size: 1.4rem
             text-transform: uppercase
             color: #ffffff
             font-weight: bold
@@ -203,6 +210,8 @@ header
                 display: inline-block
                 font-size: 2.4rem
                 font-weight: 700
+                color: #ffffff
+                font-family: "Montserrat"
 #what
     .wrapper
         padding-top: 10rem
@@ -279,7 +288,7 @@ header
                             display: inline-block
                     .itemtext
                         display: inline-block
-                        width: 80%
+                        width: 29rem
                         padding-left: 2.8rem
                         h5
                                 font-size: 1.4rem
@@ -303,13 +312,14 @@ header
 #unique
     position: relative
     background-image: url(/images/foralldevices-bg.jpg)
-    background-size: 100% 100%
-    background-attachment: fixed
-    background-repeat: no-repeat
+    height: fit-content
+    background-size: cover
+    background-position: center
     .wrapper
         padding-top: 10rem
         .tablet
             padding-top: 10rem
+
             img 
                 position: relative
                 left: 50%
@@ -324,21 +334,24 @@ header
 #service
     .wrapper
         padding-top: 10rem
+        padding-bottom: 12rem
+        font-size: 0
         .services
             font-size: 0
             width: 100%
             padding-top: 8.5rem
             .wallphot
-                max-width: 59.5rem
+                font-size: 0
+                width: 49%
                 display: inline-block
                 .whatwedo
                     max-width: 100%
-                    height: auto
+                    object-fit: cover
+
         .ako
-            max-width: 60rem
+            max-width: 50%
             display: inline-block
             font-size: 0
-            padding-bottom: 12rem
             .accordion 
                 background-color: #eee
                 width: 100%
@@ -346,37 +359,37 @@ header
                 background-color: rgba(0,0,0,0)
                 border: 1px solid #e5e5e5
                 outline: none
-                height: 60px
-                font-size: 14px
+                height: 6rem
+                font-size: 1.4rem
                 text-transform: uppercase
                 color: #333333
                 font-weight: 400
                 font-family: "Montserrat"
                 p
-                    padding: 25px 0
+                    padding: 2.5rem 0
                     display: inline-block
                 img
                     float: left
-                    padding: 15px
+                    padding: 1.5rem
                 .up
                     float: right
-                    padding: 24px 2px
+                    padding: 2.4rem 0.2rem
                 .down
                     transform: rotate(180deg)
                     float: right
-                    padding: 24px 2px
+                    padding: 2.4rem 0.2rem
 
             .panel 
                 background-color: white
                 padding: 2rem 2rem 0
                 overflow: scroll
-                height: 182px
+                height: 18.2rem
                 overflow-x: hidden
        
                 p
-                    height: 135px
-                    font-size: 15px
-                    line-height: 24px
+                    height: 13.5rem
+                    font-size: 1.5rem
+                    line-height: 2.4rem
                     color: #999999
                     font-weight: 300
                     font-style: italic
@@ -386,12 +399,138 @@ header
 
 #qoute
     background-color: #f8f8f8
-    width: 100%
-    height: 290px
+    max-width: 100%
+    height: fit-content
+    padding: 7rem 0
     .wrapper
-        display: inline
-        .left
-            vertical-align: sub
+        max-height: 29.1rem
+        .arrowleft
+            display: inline-block
+            vertical-align: center
+            padding: 13.5rem 0
+            .left
+                transform: rotate(270deg)
+                display: inline-block
+        .chicon
+            display: inline-block
+            vertical-align: middle
+            padding-left: 7.3rem
+            max-width: 20%
+            .chaticon
+                height: auto
+                max-width: 100%
+
+        .comment
+            display: inline-block
+            vertical-align: middle
+            padding-left: 6.1rem
+            p
+                max-width: 77rem
+                max-height: 14.7rem
+                font-size: 2.4rem
+                line-height: 3.6rem
+                color: #999999
+                font-weight: 300
+                font-style: italic
+                font-family: "Roboto"
+                display: inline-block
+                text-align: left
+            .qoute
+                display: block
+                p
+                    padding-left: 1rem
+                    font-size: 2.4rem
+                    color: #333333
+                    font-weight: 400
+                    font-family: "Kaushan Script"
+                .qline
+                    width: 60px
+                    height: 3px
+                    background-color: #f38181
+                    display: inline-block
+                    margin: 0
+                    padding-right: 1rem
+        .arrowright
+            display: inline-block
+            vertical-align: center
+            padding: 13.5rem 0
+            padding-left: 7.4rem
+            .right
+                transform: rotate(90deg)
+ 
+            
+
+  
+        
 
 
+#meetourteam
+    padding-top: 10rem
+    .wrapper
+        padding-bottom: 10rem
+        .teamphotos
+            width: 100%
+            font-size: 0
+            .first
+                display: inline-block
+                width: 32%
+                .tphoto
+                    img
+                        max-width: 100%
+                        height: auto
+                .name
+                    padding-top: 3.1rem
+                    text-align: center
+                    font-size: 14px
+                    text-transform: uppercase
+                    color: #333333
+                    font-weight: 400
+                    font-family: "Montserrat"
+                .position
+                    text-align: center
+                    padding-top: 1.5rem
+                    font-size: 1.5rem
+                    line-height: 2.4rem
+                    color: #999999
+                    font-weight: 300
+                    font-style: italic
+                    font-family: "Roboto"
 
+#logos
+    height: fit-content
+    max-width: 100%
+    background-color: #f8f8f8
+    .wrapper
+        font-size: 0
+        padding: 5rem 0
+        .logo
+            display: inline-block
+            padding: 3rem
+            width: 20rem
+
+.leftgal
+    width: 50%
+    font-size: 0
+    display: inline-block
+    .galpho
+        display: inline-block
+        width: 50%
+        img
+            object-fit: cover
+.rightgal
+    width: 50%
+    font-size: 0
+    display: inline-block
+    .biggergalpho
+        width: 49%
+        height: 100%
+        display: inline-block
+    .galpho
+        display: inline-block
+        width: 49%
+    
+
+
+@media screen and (max-width: 850px)  
+    html
+        font-size: 38%

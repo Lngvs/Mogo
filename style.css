@@ -118,6 +118,12 @@ body ::-webkit-scrollbar-thumb {
   padding: 4.5rem 1.5rem 0;
 }
 
+.lil {
+  width: 60px;
+  height: 3px;
+  background-color: #f38181;
+}
+
 header {
   width: 100%;
   position: absolute;
@@ -154,14 +160,14 @@ header .container nav .wrapper ul li {
 }
 
 #landing {
-  display: none;
   max-width: 1920px;
   min-height: 100vh;
   border: solid red;
   background-image: url(/images/main-banner.jpg);
-  background-size: 100% 100%;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-size: cover;
+  background-position: center;
 }
 #landing .wrapper {
   position: relative;
@@ -204,7 +210,7 @@ header .container nav .wrapper ul li {
   height: 4rem;
   background-color: rgba(0, 0, 0, 0);
   border: 3px solid #ffffff;
-  font-size: 14px;
+  font-size: 1.4rem;
   text-transform: uppercase;
   color: #ffffff;
   font-weight: bold;
@@ -226,6 +232,8 @@ header .container nav .wrapper ul li {
   display: inline-block;
   font-size: 2.4rem;
   font-weight: 700;
+  color: #ffffff;
+  font-family: "Montserrat";
 }
 
 #what .wrapper {
@@ -309,7 +317,7 @@ header .container nav .wrapper ul li {
 }
 #services .wrapper .section .item .itemtext {
   display: inline-block;
-  width: 80%;
+  width: 29rem;
   padding-left: 2.8rem;
 }
 #services .wrapper .section .item .itemtext h5 {
@@ -337,9 +345,10 @@ header .container nav .wrapper ul li {
 #unique {
   position: relative;
   background-image: url(/images/foralldevices-bg.jpg);
-  background-size: 100% 100%;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-size: cover;
+  background-position: center;
 }
 #unique .wrapper {
   padding-top: 10rem;
@@ -363,6 +372,8 @@ header .container nav .wrapper ul li {
 
 #service .wrapper {
   padding-top: 10rem;
+  padding-bottom: 12rem;
+  font-size: 0;
 }
 #service .wrapper .services {
   font-size: 0;
@@ -370,18 +381,19 @@ header .container nav .wrapper ul li {
   padding-top: 8.5rem;
 }
 #service .wrapper .services .wallphot {
-  max-width: 59.5rem;
+  font-size: 0;
+  width: 49%;
   display: inline-block;
 }
 #service .wrapper .services .wallphot .whatwedo {
   max-width: 100%;
-  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 #service .wrapper .ako {
-  max-width: 60rem;
+  max-width: 50%;
   display: inline-block;
   font-size: 0;
-  padding-bottom: 12rem;
 }
 #service .wrapper .ako .accordion {
   background-color: #eee;
@@ -390,41 +402,41 @@ header .container nav .wrapper ul li {
   background-color: rgba(0, 0, 0, 0);
   border: 1px solid #e5e5e5;
   outline: none;
-  height: 60px;
-  font-size: 14px;
+  height: 6rem;
+  font-size: 1.4rem;
   text-transform: uppercase;
   color: #333333;
   font-weight: 400;
   font-family: "Montserrat";
 }
 #service .wrapper .ako .accordion p {
-  padding: 25px 0;
+  padding: 2.5rem 0;
   display: inline-block;
 }
 #service .wrapper .ako .accordion img {
   float: left;
-  padding: 15px;
+  padding: 1.5rem;
 }
 #service .wrapper .ako .accordion .up {
   float: right;
-  padding: 24px 2px;
+  padding: 2.4rem 0.2rem;
 }
 #service .wrapper .ako .accordion .down {
   transform: rotate(180deg);
   float: right;
-  padding: 24px 2px;
+  padding: 2.4rem 0.2rem;
 }
 #service .wrapper .ako .panel {
   background-color: white;
   padding: 2rem 2rem 0;
   overflow: scroll;
-  height: 182px;
+  height: 18.2rem;
   overflow-x: hidden;
 }
 #service .wrapper .ako .panel p {
-  height: 135px;
-  font-size: 15px;
-  line-height: 24px;
+  height: 13.5rem;
+  font-size: 1.5rem;
+  line-height: 2.4rem;
   color: #999999;
   font-weight: 300;
   font-style: italic;
@@ -435,12 +447,163 @@ header .container nav .wrapper ul li {
 
 #qoute {
   background-color: #f8f8f8;
-  width: 100%;
-  height: 290px;
+  max-width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 7rem 0;
 }
 #qoute .wrapper {
-  display: inline;
+  max-height: 29.1rem;
 }
-#qoute .wrapper .left {
-  vertical-align: sub;
+#qoute .wrapper .arrowleft {
+  display: inline-block;
+  vertical-align: center;
+  padding: 13.5rem 0;
+}
+#qoute .wrapper .arrowleft .left {
+  transform: rotate(270deg);
+  display: inline-block;
+}
+#qoute .wrapper .chicon {
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: 7.3rem;
+  max-width: 20%;
+}
+#qoute .wrapper .chicon .chaticon {
+  height: auto;
+  max-width: 100%;
+}
+#qoute .wrapper .comment {
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: 6.1rem;
+}
+#qoute .wrapper .comment p {
+  max-width: 77rem;
+  max-height: 14.7rem;
+  font-size: 2.4rem;
+  line-height: 3.6rem;
+  color: #999999;
+  font-weight: 300;
+  font-style: italic;
+  font-family: "Roboto";
+  display: inline-block;
+  text-align: left;
+}
+#qoute .wrapper .comment .qoute {
+  display: block;
+}
+#qoute .wrapper .comment .qoute p {
+  padding-left: 1rem;
+  font-size: 2.4rem;
+  color: #333333;
+  font-weight: 400;
+  font-family: "Kaushan Script";
+}
+#qoute .wrapper .comment .qoute .qline {
+  width: 60px;
+  height: 3px;
+  background-color: #f38181;
+  display: inline-block;
+  margin: 0;
+  padding-right: 1rem;
+}
+#qoute .wrapper .arrowright {
+  display: inline-block;
+  vertical-align: center;
+  padding: 13.5rem 0;
+  padding-left: 7.4rem;
+}
+#qoute .wrapper .arrowright .right {
+  transform: rotate(90deg);
+}
+
+#meetourteam {
+  padding-top: 10rem;
+}
+#meetourteam .wrapper {
+  padding-bottom: 10rem;
+}
+#meetourteam .wrapper .teamphotos {
+  width: 100%;
+  font-size: 0;
+}
+#meetourteam .wrapper .teamphotos .first {
+  display: inline-block;
+  width: 32%;
+}
+#meetourteam .wrapper .teamphotos .first .tphoto img {
+  max-width: 100%;
+  height: auto;
+}
+#meetourteam .wrapper .teamphotos .first .name {
+  padding-top: 3.1rem;
+  text-align: center;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #333333;
+  font-weight: 400;
+  font-family: "Montserrat";
+}
+#meetourteam .wrapper .teamphotos .first .position {
+  text-align: center;
+  padding-top: 1.5rem;
+  font-size: 1.5rem;
+  line-height: 2.4rem;
+  color: #999999;
+  font-weight: 300;
+  font-style: italic;
+  font-family: "Roboto";
+}
+
+#logos {
+  height: -moz-fit-content;
+  height: fit-content;
+  max-width: 100%;
+  background-color: #f8f8f8;
+}
+#logos .wrapper {
+  font-size: 0;
+  padding: 5rem 0;
+}
+#logos .wrapper .logo {
+  display: inline-block;
+  padding: 3rem;
+  width: 20rem;
+}
+
+.leftgal {
+  width: 50%;
+  font-size: 0;
+  display: inline-block;
+}
+.leftgal .galpho {
+  display: inline-block;
+  width: 50%;
+}
+.leftgal .galpho img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.rightgal {
+  width: 50%;
+  font-size: 0;
+  display: inline-block;
+}
+.rightgal .biggergalpho {
+  width: 49%;
+  height: 100%;
+  display: inline-block;
+}
+.rightgal .galpho {
+  display: inline-block;
+  width: 49%;
+}
+
+@media screen and (max-width: 850px) {
+  html {
+    font-size: 38%;
+  }
 }/*# sourceMappingURL=style.css.map */
