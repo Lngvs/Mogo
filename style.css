@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 *, *:before, *:after {
   box-sizing: border-box;
 }
@@ -122,11 +125,13 @@ body ::-webkit-scrollbar-thumb {
   width: 60px;
   height: 3px;
   background-color: #f38181;
+  border: none;
 }
 
 header {
   width: 100%;
   position: absolute;
+  z-index: 1;
 }
 header .container nav {
   display: inline-block;
@@ -157,12 +162,29 @@ header .container nav .wrapper ul li {
   display: inline-block;
   padding-left: 5.2rem;
   font-size: 1.4rem;
+  cursor: pointer;
+}
+header .container nav .wrapper ul li a:hover {
+  color: #fce38a;
+  padding-bottom: 10px;
+  border-bottom: solid 3px #fce38a;
+  transition: all 0.2s ease;
+}
+
+.lilmain {
+  width: 60px;
+  height: 3px;
+  background-color: #f38181;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
 }
 
 #landing {
   max-width: 1920px;
   min-height: 100vh;
-  border: solid red;
   background-image: url(/images/main-banner.jpg);
   height: -moz-fit-content;
   height: fit-content;
@@ -216,24 +238,38 @@ header .container nav .wrapper ul li {
   font-weight: bold;
   font-family: "Montserrat";
   text-align: center;
+  cursor: pointer;
 }
 #landing .wrapper ol {
   position: absolute;
   bottom: 0;
-  width: 100%;
-  height: 7rem;
+  min-width: 100%;
+  height: 70px;
   font-size: 0;
   padding: 2.5rem 1rem 2.5rem 0;
-  list-style: none;
-  counter-increment: counter;
+  list-style: decimal;
+  list-style-position: inside;
 }
 #landing .wrapper ol li {
-  width: 25%;
+  min-width: 20%;
   display: inline-block;
-  font-size: 2.4rem;
+  font-size: 18px;
   font-weight: 700;
   color: #ffffff;
   font-family: "Montserrat";
+  text-transform: uppercase;
+  list-style: decimal;
+  margin-left: 5%;
+  cursor: pointer;
+  border-top: rgba(255, 255, 255, 0.5137254902) solid;
+  padding-top: 1rem;
+}
+#landing .wrapper ol li li:hover {
+  border-top: solid red;
+}
+#landing .wrapper ol li p {
+  display: inline-block;
+  font-size: 24px;
 }
 
 #what .wrapper {
@@ -261,11 +297,60 @@ header .container nav .wrapper ul li {
   margin-right: auto;
 }
 #what .wrapper .aboutphotos .aboutimg {
-  width: 33.33%;
+  min-width: 30%;
   display: inline-block;
+  position: relative;
+}
+#what .wrapper .aboutphotos .aboutimg:first-child {
+  margin-right: 2rem;
+}
+#what .wrapper .aboutphotos .aboutimg:last-child {
+  margin-left: 2rem;
 }
 #what .wrapper .aboutphotos .aboutimg img {
   max-width: 100%;
+}
+#what .wrapper .aboutphotos .aboutimg .overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-image: linear-gradient(0deg, rgba(241, 226, 144, 0.6745098039) 0%, rgba(234, 139, 137, 0.7882352941) 100%);
+  box-shadow: 1px 1px #95e1d3, 2px 2px #95e1d3, 3px 3px #95e1d3, 4px 4px #95e1d3, 5px 5px #95e1d3, 6px 6px #95e1d3;
+  transform: translateX(-3px);
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+#what .wrapper .aboutphotos .aboutimg .overlay .text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+#what .wrapper .aboutphotos .aboutimg .overlay .text img {
+  display: block;
+  margin-inline: auto;
+  padding-bottom: 10px;
+}
+#what .wrapper .aboutphotos .aboutimg .overlay .text span {
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-weight: 700;
+  font-family: "Montserrat";
+  text-align: center;
+  opacity: 1;
+}
+#what .wrapper .aboutphotos .aboutimg:hover .overlay {
+  opacity: 1;
 }
 
 #ratings {
@@ -361,6 +446,8 @@ header .container nav .wrapper ul li {
   left: 50%;
   transform: translate(-50%);
   bottom: 0;
+  max-width: 100%;
+  height: auto;
 }
 #unique .wrapper .iphone {
   position: absolute;
@@ -369,10 +456,16 @@ header .container nav .wrapper ul li {
   max-width: 100%;
   height: auto;
 }
+#unique .wrapper .iphone img {
+  max-width: 100%;
+  height: auto;
+}
 
-#service .wrapper {
+#service {
   padding-top: 10rem;
   padding-bottom: 12rem;
+}
+#service .wrapper {
   font-size: 0;
 }
 #service .wrapper .services {
@@ -382,7 +475,7 @@ header .container nav .wrapper ul li {
 }
 #service .wrapper .services .wallphot {
   font-size: 0;
-  width: 49%;
+  max-width: 49%;
   display: inline-block;
 }
 #service .wrapper .services .wallphot .whatwedo {
@@ -394,6 +487,7 @@ header .container nav .wrapper ul li {
   max-width: 50%;
   display: inline-block;
   font-size: 0;
+  vertical-align: text-bottom;
 }
 #service .wrapper .ako .accordion {
   background-color: #eee;
@@ -453,7 +547,7 @@ header .container nav .wrapper ul li {
   padding: 7rem 0;
 }
 #qoute .wrapper {
-  max-height: 29.1rem;
+  min-height: 29.1rem;
 }
 #qoute .wrapper .arrowleft {
   display: inline-block;
@@ -533,10 +627,65 @@ header .container nav .wrapper ul li {
 #meetourteam .wrapper .teamphotos .first {
   display: inline-block;
   width: 32%;
+  margin-right: 1rem;
+}
+#meetourteam .wrapper .teamphotos .first .tphoto {
+  position: relative;
+  width: 90%;
+}
+#meetourteam .wrapper .teamphotos .first .tphoto:first-child {
+  margin-right: 1rem;
+}
+#meetourteam .wrapper .teamphotos .first .tphoto:last-child {
+  margin-left: 1rem;
 }
 #meetourteam .wrapper .teamphotos .first .tphoto img {
   max-width: 100%;
   height: auto;
+}
+#meetourteam .wrapper .teamphotos .first .overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-image: linear-gradient(0deg, rgba(241, 226, 144, 0.6745098039) 0%, rgba(234, 139, 137, 0.7882352941) 100%);
+  box-shadow: 1px 1px #95e1d3, 2px 2px #95e1d3, 3px 3px #95e1d3, 4px 4px #95e1d3, 5px 5px #95e1d3, 6px 6px #95e1d3;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+#meetourteam .wrapper .teamphotos .first .overlay .text {
+  color: white;
+  font-size: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  height: 57px;
+  width: 225px;
+}
+#meetourteam .wrapper .teamphotos .first .overlay .text .svg {
+  display: inline-block;
+  width: 55px;
+  height: 57px;
+  background-color: #fbe389;
+  vertical-align: middle;
+  overflow: hidden;
+}
+#meetourteam .wrapper .teamphotos .first .overlay .text .svg img {
+  max-width: 100%;
+  width: 55px;
+  height: 57px;
+  height: auto;
+  vertical-align: middle;
+}
+#meetourteam .wrapper .teamphotos .first .tphoto:hover .overlay {
+  opacity: 1;
 }
 #meetourteam .wrapper .teamphotos .first .name {
   padding-top: 3.1rem;
@@ -571,24 +720,24 @@ header .container nav .wrapper ul li {
 #logos .wrapper .logo {
   display: inline-block;
   padding: 3rem;
-  width: 20rem;
+  min-width: 20rem;
 }
 
 .gallery {
-  width: 100%;
+  min-width: 100%;
   height: 78rem;
   font-size: 0;
   display: inline-block;
 }
 .gallery .galer1 {
-  width: 25%;
+  min-width: 25%;
   height: 100%;
   display: inline-block;
 }
 .gallery .galer1 .galpho1 {
   display: inline-block;
-  width: 100%;
-  height: 50%;
+  min-width: 100%;
+  min-height: 50%;
   background-image: url(/images/gal-01.jpg);
   background-size: cover;
   background-position: center;
@@ -602,7 +751,7 @@ header .container nav .wrapper ul li {
   background-position: center;
 }
 .gallery .galer2 {
-  width: 25%;
+  min-width: 25%;
   height: 100%;
   display: inline-block;
 }
@@ -621,9 +770,62 @@ header .container nav .wrapper ul li {
   background-image: url(/images/gal-06.jpg);
   background-size: cover;
   background-position: center;
+  position: relative;
+}
+.gallery .galer2 .galpho4 .overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-image: linear-gradient(0deg, rgba(241, 226, 144, 0.6745098039) 0%, rgba(234, 139, 137, 0.7882352941) 100%);
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+.gallery .galer2 .galpho4:hover .overlay {
+  opacity: 1;
+}
+.gallery .galer2 .galpho4:hover .overlay .text {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding-top: 8rem;
+}
+.gallery .galer2 .galpho4:hover .overlay .text img {
+  display: block;
+  text-align: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-inline: auto;
+  padding-bottom: 3rem;
+}
+.gallery .galer2 .galpho4:hover .overlay .text span {
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-weight: 400;
+  font-family: "Montserrat";
+  display: block;
+}
+.gallery .galer2 .galpho4:hover .overlay .text p {
+  font-size: 15px;
+  color: #ffffff;
+  font-weight: 300;
+  font-style: italic;
+  font-family: "Roboto";
+  text-align: center;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 .gallery .galer3 {
-  width: 25%;
+  min-width: 25%;
   height: 100%;
   display: inline-block;
 }
@@ -636,7 +838,7 @@ header .container nav .wrapper ul li {
   background-position: center;
 }
 .gallery .galer4 {
-  width: 25%;
+  min-width: 25%;
   height: 100%;
   display: inline-block;
 }
@@ -742,6 +944,7 @@ header .container nav .wrapper ul li {
   background-position: center;
   padding: 13rem 0;
   font-size: 0;
+  min-width: 100%;
 }
 #peoplesay .col1 {
   min-width: 50%;
@@ -757,16 +960,18 @@ header .container nav .wrapper ul li {
   padding-top: 8.1rem;
 }
 #peoplesay .col1 .client .cphoto {
-  width: 25%;
+  max-width: 25%;
   display: inline-block;
   height: 100%;
   vertical-align: top;
+  margin: 0 auto;
+  padding-right: 1rem;
 }
 #peoplesay .col1 .client .cphoto img {
   border-radius: 100px;
 }
 #peoplesay .col1 .client .info {
-  width: 75%;
+  min-width: 75%;
   display: inline-block;
 }
 #peoplesay .col1 .client .info .name {
@@ -792,8 +997,8 @@ header .container nav .wrapper ul li {
   display: inline-block;
 }
 #peoplesay .col1 .client .info .comment {
-  width: 389px;
-  height: 129px;
+  max-width: 389px;
+  height: 12.9rem;
   font-size: 15px;
   line-height: 24px;
   color: #999999;
@@ -812,10 +1017,22 @@ header .container nav .wrapper ul li {
 #blog .wrapper .text {
   padding-bottom: 4rem;
 }
-#blog .wrapper .blog {
+#blog .wrapper .blogs {
+  width: 100%;
+  margin: 2rem;
+}
+#blog .wrapper .blogs .blog {
   display: inline-block;
-  min-width: 33%;
   position: relative;
+  min-width: 33%;
+}
+#blog .wrapper .blogs .blogpho {
+  max-width: 100%;
+  margin: 1rem;
+}
+#blog .wrapper .blogs .blogpho img {
+  max-width: 100%;
+  height: auto;
 }
 #blog .wrapper .date {
   position: absolute;
@@ -1060,5 +1277,16 @@ header .container nav .wrapper ul li {
 @media screen and (max-width: 850px) {
   html {
     font-size: 38%;
+  }
+  .wrapper {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 550px) {
+  html {
+    font-size: 25%;
+  }
+  .wrapper {
+    text-align: center;
   }
 }/*# sourceMappingURL=style.css.map */
